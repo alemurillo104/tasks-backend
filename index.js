@@ -9,6 +9,12 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
+
+app.route('/')
+  .get(function (req, res) {
+    res.sendFile(process.cwd() + '/index.html');
+});
+
 app.route("/api/tareas")
     .get(getTareas)
 
