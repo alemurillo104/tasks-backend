@@ -20,6 +20,10 @@ const tasksSchema = new mongoose.Schema({
         type: String,
         enum: Object.values(Priority),
         default: Priority.LOW,
+    },
+    fechaVencimiento: {
+        type: Date,
+        required: true,
     }
 });
 

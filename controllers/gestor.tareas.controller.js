@@ -40,9 +40,7 @@ const tasks = [
 ];
 
 const getTareas = (req, res) => {
-    let mytasks = tasks.map(t => new Tarea(t));
-    console.log(mytasks);
-    res.json(mytasks);
+    res.json(tasks);
 }
 
 const ordenarTareas = (req, res) => {
@@ -50,7 +48,6 @@ const ordenarTareas = (req, res) => {
     console.log(tasks);
     res.json(tasks);
 }
-
 
 const sortByPriorityAndDateAsc = (taskA, taskB) => {
     const priorityOrder = {
@@ -67,12 +64,6 @@ const sortByPriorityAndDateAsc = (taskA, taskB) => {
     }
 
     return taskA.fechaVencimiento - taskB.fechaVencimiento;
-};
-
-const sortByPriority = (taskA, taskB) => {
-    const priorityA = Object.values(Priority).indexOf(taskA.prioridad);
-    const priorityB = Object.values(Priority).indexOf(taskB.prioridad);
-    return priorityA - priorityB;
 };
 
 module.exports = {
