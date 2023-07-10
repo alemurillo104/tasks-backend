@@ -15,6 +15,6 @@ app.route("/api/tareas")
 app.route("/api/tareas/organizar")
     .get(ordenarTareas)
 
-app.listen(port, () => {
-    console.log('server is running on port ', port);
-})
+app.listen(process.env.PORT || port, function () {
+    console.log(`App listening on port ${process.env.PORT || port}`);
+});
