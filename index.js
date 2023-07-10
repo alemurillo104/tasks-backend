@@ -1,5 +1,5 @@
 const express = require('express');
-
+const cors = require('cors');
 const { getTareas, ordenarTareas } = require('./controllers/gestor.tareas.controller');
 
 const bodyParser = require('body-parser')
@@ -8,7 +8,7 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use(cors());
 app.route("/api/tareas")
     .get(getTareas)
 
