@@ -44,9 +44,10 @@ const getTareas = (req, res) => {
 }
 
 const ordenarTareas = (req, res) => {
-    tasks.sort(sortByPriorityAndDateAsc);
-    console.log(tasks);
-    res.json(tasks);
+    const tasksList = tasks.slice()
+    tasksList.sort(sortByPriorityAndDateAsc);
+    console.log(tasksList);
+    res.json(tasksList);
 }
 
 const sortByPriorityAndDateAsc = (taskA, taskB) => {
